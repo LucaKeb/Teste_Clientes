@@ -1,11 +1,16 @@
-CREATE TABLE clientes (
-	id SERIAL PRIMARY KEY,
-	nome VARCHAR(40) NOT NULL,
-	cpf VARCHAR(11) UNIQUE,
-	logradouro VARCHAR(40),
+CREATE TABLE Clientes (
+	id INTEGER NOT NULL,
+	nome VARCHAR(40),
+	cpf VARCHAR(11),
+	logadouro VARCHAR(40),
 	bairro VARCHAR(40),
 	uf VARCHAR(2),
 	nascimento DATE,
 	cep VARCHAR(8),
-	telefone VARCHAR(11)
+	telefone VARCHAR(11),
+	PRIMARY KEY (id)
 );
+
+ALTER TABLE clientes DROP COLUMN id;
+ALTER TABLE clientes ADD COLUMN id SERIAL PRIMARY KEY;
+ALTER TABLE clientes ALTER COLUMN id SET NOT NULL;
