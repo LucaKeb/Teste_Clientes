@@ -1,0 +1,126 @@
+unit cadUnit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Forms, Vcl.Controls, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls, Vcl.DBCtrls,
+  Data.DB, Vcl.Grids, Vcl.DBGrids, System.JSON, System.Net.HttpClient, System.Net.URLClient, Vcl.Dialogs,
+  Data.Bind.Components, Data.Bind.ObjectScope;
+
+type
+  TformCad = class(TForm)
+    DBEdNome: TDBEdit;
+    DBEdCPF: TDBEdit;
+    DBEdLogra: TDBEdit;
+    DBEdBairro: TDBEdit;
+    DBEdUF: TDBEdit;
+    DBEdDataNascimento: TDBEdit;
+    DBEdCEP: TDBEdit;
+    DBEdTel: TDBEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label3: TLabel;
+    DBNavigator1: TDBNavigator;
+    DBGrid1: TDBGrid;
+    DBEdID: TDBEdit;
+    lblTitle: TLabel;
+    btnBuscar: TButton;
+    procedure btnBuscarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  formCad: TformCad;
+
+implementation
+
+{$R *.dfm}
+
+uses
+  DMUnit;
+
+procedure LimparEnderecos;
+begin
+  formCad.DBEdUF.Text := '';
+  formCad.DBEdBairro.Text := '';
+  formCad.DBEdLogra.Text := '';
+end;
+
+procedure TformCad.btnBuscarClick(Sender: TObject);
+var
+  HTTPClient: THTTPClient;
+  Response: IHTTPResponse;
+  CEP: string;
+  ViaCEPURL: string;
+  JSONValue: TJSONValue;
+  JSONObject: TJSONObject;
+begin
+  CEP := formCad.DBEdCEP.Text;
+
+  if Length(CEP) <> 8 then
+  begin
+    ShowMessage('CEP deve ter 8 dígitos');
+    LimparEnderecos;
+    Exit;
+  end;
+
+  ViaCEPURL := 'https://viacep.com.br/ws/' + CEP + '/json';
+
+  HTTPClient := THTTPClient.Create;
+  try
+    try
+      Response := HTTPClient.Get(ViaCEPURL);
+
+      if Response.StatusCode = 200 then
+      begin
+        JSONValue := TJSONObject.ParseJSONValue(Response.ContentAsString);
+
+        if Assigned(JSONValue) and (JSONValue is TJSONObject) then
+        begin
+          JSONObject := JSONValue as TJSONObject;
+
+          if JSONObject.GetValue('erro').Value = 'true' then
+          begin
+            ShowMessage('CEP não encontrado');
+            LimparEnderecos;
+            Exit;
+          end;
+
+          DBEdUF.Text := JSONObject.GetValue('uf').Value;
+          DBEdBairro.Text := JSONObject.GetValue('bairro').Value;
+          DBEdLogra.Text := JSONObject.GetValue('logradouro').Value;
+        end
+        else
+        begin
+          ShowMessage('Resposta inválida da API');
+          LimparEnderecos;
+        end;
+      end
+      else
+      begin
+        ShowMessage('Erro de requisição ' + IntToStr(Response.StatusCode));
+        LimparEnderecos;
+      end;
+    except
+      on E: Exception do
+      begin
+        ShowMessage('Erro na requisição: ' + E.Message);
+        LimparEnderecos;
+      end;
+    end;
+  finally
+    HTTPClient.Free;
+  end;
+end;
+
+end.
+

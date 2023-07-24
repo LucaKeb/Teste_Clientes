@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/05/11 19:10:13.000.711,=C:\Users\lucas\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/07/21 17:41:54.000.480,=C:\Users\lucas\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/07/21 18:53:21.000.365,C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\mainUnit.dfm=C:\Users\lucas\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2023/07/21 18:53:21.000.365,C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\mainUnit.pas=C:\Users\lucas\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/07/21 18:54:49.000.581,C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\DelphiTest.dproj=C:\Users\lucas\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2023/07/21 18:55:42.000.959,=C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\Unit1.pas</Transaction>
+    <Transaction>2023/07/21 18:56:23.000.343,=C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\Unit2.pas</Transaction>
+    <Transaction>2023/07/21 19:02:57.000.180,=C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\Unit1.pas</Transaction>
+    <Transaction>2023/07/21 20:39:21.000.074,C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\DMUnit.pas=C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\Unit1.pas</Transaction>
+    <Transaction>2023/07/21 20:39:21.000.074,C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\DMUnit.dfm=C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\Unit1.dfm</Transaction>
+    <Transaction>2023/07/21 20:39:41.000.697,C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\cadUnit.pas=C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\Unit2.pas</Transaction>
+    <Transaction>2023/07/21 20:39:41.000.697,C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\cadUnit.dfm=C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\Unit2.dfm</Transaction>
+    <Transaction>2023/07/23 20:17:03.000.815,=C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\Unit1.pas</Transaction>
+    <Transaction>2023/07/23 20:19:25.000.655,C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\Unit1.dfm=C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\consultUnit.dfm</Transaction>
+    <Transaction>2023/07/23 20:19:25.000.655,C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\Unit1.pas=C:\Users\lucas\OneDrive\Área de Trabalho\Praticando Delphi\TesteEmDelphi\consultUnit.pas</Transaction>
+  </Transactions>
+</BorlandProject>
